@@ -8,4 +8,5 @@ build-ansible.sh
 porting_guide_4.rst
 setup.cfg
 setup.py
-vendor
+.pybuild/
+*.egg-info/
