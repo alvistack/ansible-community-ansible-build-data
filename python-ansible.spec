@@ -47,7 +47,8 @@ rm -rf %{buildroot}%{python3_sitelib}/ansible_collections/community/vmware/check
 
 %package -n ansible
 Summary: Official assortment of Ansible collections
-Requires: ansible-core >= 2.11.6
+Requires: ansible-core >= 100:2.11.6
+Requires: ansible-core < 100:2.12
 Requires: python3
 Provides: python3-ansible = %{epoch}:%{version}-%{release}
 Provides: python3dist(ansible) = %{epoch}:%{version}-%{release}
