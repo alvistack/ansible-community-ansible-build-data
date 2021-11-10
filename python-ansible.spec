@@ -2,7 +2,7 @@
 
 Name: python-ansible
 Epoch: 100
-Version: 5.0.0b1
+Version: 5.0.0.b1
 Release: 1%{?dist}
 BuildArch: noarch
 Summary: Official assortment of Ansible collections
@@ -41,14 +41,15 @@ find %{buildroot}%{python3_sitelib} -type f -name '*.sh' -exec sed -i -e 's|^#!/
 find %{buildroot}%{python3_sitelib} -type f -name '*.sh' | xargs grep -E -l -e '^#!/bin/bash' | xargs chmod a+x
 rm -rf %{buildroot}%{python3_sitelib}/ansible_collections/ansible/windows/tests/integration/targets/win_command/files/crt_setmode.c
 rm -rf %{buildroot}%{python3_sitelib}/ansible_collections/community/vmware/check-ignores-order
+rm -rf %{buildroot}%{python3_sitelib}/ansible_collections/kubernetes/core/molecule/default/roles/k8scopy/files/hello
 %fdupes -s %{buildroot}%{python3_sitelib}
 
 %check
 
 %package -n ansible
 Summary: Official assortment of Ansible collections
-Requires: ansible-core >= 100:2.11.6
-Requires: ansible-core < 100:2.12
+Requires: ansible-core >= 100:2.12.0
+Requires: ansible-core < 100:2.13
 Requires: python3
 Provides: python3-ansible = %{epoch}:%{version}-%{release}
 Provides: python3dist(ansible) = %{epoch}:%{version}-%{release}

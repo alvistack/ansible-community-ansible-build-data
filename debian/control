@@ -24,7 +24,7 @@ Depends:
  ${shlibs:Depends},
  ${python3:Depends},
  python3,
- ansible-core (>= 100:2.11.6),
- ansible-core (<< 100:2.12),
+ ansible-core (>= 100:2.12.0),
+ ansible-core (<< 100:2.13),
 Provides:
  python3-ansible,
