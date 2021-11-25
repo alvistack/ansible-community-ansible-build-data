@@ -2,7 +2,7 @@
 
 Name: python-ansible
 Epoch: 100
-Version: 5.0.0b1
+Version: 5.0.0.rc1
 Release: 1%{?dist}
 BuildArch: noarch
 Summary: Official assortment of Ansible collections
