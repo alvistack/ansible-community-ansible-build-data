@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+
+SHELL := /bin/bash
+
+override_dh_auto_install:
+	dh_auto_install
+	find debian/ansible/usr/lib/python*/*-packages -type d -name '.*' -prune -exec rm -rf {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '.*' -exec rm -rf {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.orig' -exec rm -rf {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.pem' -exec rm -rf {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.pyc' -exec rm -rf {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.rej' -exec rm -rf {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.swp' -exec rm -rf {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.rst' -exec chmod a-x {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.py' -exec sed -i -e 's|^#!/usr/bin/env python|#!/usr/bin/python3|' {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.py' -exec sed -i -e 's|^#!/usr/bin/python.*|#!/usr/bin/python3|' {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.py' | xargs grep -E -l -e '^#!/usr/bin/python3' | xargs chmod a+x
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.sh' -exec sed -i -e 's|^#!/usr/bin/env bash|#!/bin/bash|' {} \;
+	find debian/ansible/usr/lib/python*/*-packages -type f -name '*.sh' | xargs grep -E -l -e '^#!/bin/bash' | xargs chmod a+x
+	rm -rf debian/ansible/usr/lib/python*/*-packages/ansible_collections/ansible/windows/tests/integration/targets/win_command/files/crt_setmode.c
+	rm -rf debian/ansible/usr/lib/python*/*-packages/ansible_collections/community/vmware/check-ignores-order
+	rm -rf debian/ansible/usr/lib/python*/*-packages/ansible_collections/kubernetes/core/molecule/default/roles/k8scopy/files/hello
+	fdupes -s debian/ansible/usr/lib/python*/*-packages
+
+override_dh_auto_test:
+
+override_dh_auto_clean:
+
+%:
+	dh $@ --buildsystem=pybuild --with python3
