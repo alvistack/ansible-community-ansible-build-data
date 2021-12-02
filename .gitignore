@@ -1,0 +1,14 @@
+CHANGELOG-v4.rst
+CHANGELOG-v5.rst
+COPYING
+MANIFEST.in
+PKG-INFO
+README.rst
+ansible_collections
+build-ansible.sh
+porting_guide_4.rst
+porting_guide_5.rst
+setup.cfg
+setup.py
+.pybuild/
+*.egg-info/
