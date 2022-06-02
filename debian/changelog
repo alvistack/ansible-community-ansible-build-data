@@ -1,0 +1,5 @@
+python-ansible (100:6.0.0~beta2-1) UNRELEASED; urgency=medium
+
+  * https://github.com/ansible-community/ansible-build-data/releases/tag/6.0.0b2
+
+ -- Wong Hoi Sing Edison <hswong3i@gmail.com>  Thu, 02 Jun 2022 13:19:56 +0800
