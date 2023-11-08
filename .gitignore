@@ -1,5 +1,10 @@
+*.egg-info/
+.pybuild/
 CHANGELOG-v4.rst
 CHANGELOG-v5.rst
+CHANGELOG-v6.rst
+CHANGELOG-v7.rst
+CHANGELOG-v8.rst
 COPYING
 MANIFEST.in
 PKG-INFO
@@ -8,7 +13,10 @@ ansible_collections
 build-ansible.sh
 porting_guide_4.rst
 porting_guide_5.rst
+porting_guide_6.rst
+porting_guide_7.rst
+porting_guide_8.rst
+pyproject.toml
 setup.cfg
 setup.py
-.pybuild/
-*.egg-info/
+tags.yaml
