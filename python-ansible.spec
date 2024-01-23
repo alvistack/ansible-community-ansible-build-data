@@ -1,14 +1,31 @@
+# Copyright 2025 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 %global debug_package %{nil}
+
+%global source_date_epoch_from_changelog 0
 
 Name: python-ansible
 Epoch: 100
-Version: 4.8.0
+Version: 4.9.0
 Release: 1%{?dist}
 BuildArch: noarch
 Summary: Official assortment of Ansible collections
 License: GPL-3.0-only
 URL: https://github.com/ansible-community/ansible-build-data/tags
 Source0: %{name}_%{version}.orig.tar.gz
+Source99: %{name}.rpmlintrc
 BuildRequires: fdupes
 BuildRequires: python-rpm-macros
 BuildRequires: python3-devel
@@ -27,6 +44,8 @@ tar -zx -f %{S:0} --strip-components=1 -C .
 %install
 %py3_install
 find %{buildroot}%{python3_sitelib} -type d -name '.*' -prune -exec rm -rf {} \;
+find %{buildroot}%{python3_sitelib} -type d -name 'docs' -prune -exec rm -rf {} \;
+find %{buildroot}%{python3_sitelib} -type d -name 'tests' -prune -exec rm -rf {} \;
 find %{buildroot}%{python3_sitelib} -type f -name '.*' -exec rm -rf {} \;
 find %{buildroot}%{python3_sitelib} -type f -name '*.orig' -exec rm -rf {} \;
 find %{buildroot}%{python3_sitelib} -type f -name '*.pem' -exec rm -rf {} \;
@@ -41,7 +60,11 @@ find %{buildroot}%{python3_sitelib} -type f -name '*.sh' -exec sed -i -e 's|^#!/
 find %{buildroot}%{python3_sitelib} -type f -name '*.sh' | xargs grep -E -l -e '^#!/bin/bash' | xargs chmod a+x
 rm -rf %{buildroot}%{python3_sitelib}/ansible_collections/ansible/windows/tests/integration/targets/win_command/files/crt_setmode.c
 rm -rf %{buildroot}%{python3_sitelib}/ansible_collections/community/vmware/check-ignores-order
-%fdupes -s %{buildroot}%{python3_sitelib}
+fdupes -qnrps %{buildroot}%{python3_sitelib}
+install -Dpm755 -d %{buildroot}%{_datadir}/ansible/collctions
+pushd %{buildroot}%{_datadir}/ansible/collctions && \
+    ln -fs ../../../../%{python3_sitelib}/ansible_collections . && \
+    popd
 
 %check
 
@@ -62,6 +85,9 @@ Ansible collections for ansible-core.
 
 %files -n ansible
 %license COPYING
-%{python3_sitelib}/ansible*
+%dir %{_datadir}/ansible
+%dir %{_datadir}/ansible/collctions
+%{_datadir}/ansible/collctions/*
+%{python3_sitelib}/*
 
 %changelog

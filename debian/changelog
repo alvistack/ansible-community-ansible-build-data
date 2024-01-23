@@ -1,5 +1,5 @@
-python-ansible (100:4.8.0-1) UNRELEASED; urgency=medium
+python-ansible (100:4.9.0-1) UNRELEASED; urgency=medium
 
-  * https://github.com/ansible-community/ansible-build-data/releases/tag/4.8.0
+  * https://github.com/ansible-community/ansible-build-data/releases/tag/4.9.0
 
- -- Wong Hoi Sing Edison <hswong3i@gmail.com>  Tue, 02 Nov 2021 23:54:06 +0800
+ -- Wong Hoi Sing Edison <hswong3i@pantarei-design.com>  Tue, 23 Jan 2024 22:06:00 +0800

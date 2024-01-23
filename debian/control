@@ -2,16 +2,15 @@ Source: python-ansible
 Section: python
 Priority: optional
 Standards-Version: 4.5.0
-Maintainer: Wong Hoi Sing Edison <hswong3i@gmail.com>
+Maintainer: Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
 Homepage: https://github.com/ansible-community/ansible-build-data/tags
-Vcs-Browser: https://github.com/alvistack/pallets-ansible
-Vcs-Git: https://github.com/alvistack/pallets-ansible.git
+Vcs-Browser: https://github.com/alvistack/ansible-community-ansible-build-data
+Vcs-Git: https://github.com/alvistack/ansible-community-ansible-build-data.git
 Build-Depends:
  debhelper,
  debhelper-compat (= 10),
  dh-python,
  fdupes,
- python3-all,
  python3-dev,
  python3-setuptools,
 
