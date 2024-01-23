@@ -1,5 +1,6 @@
 CHANGELOG-v4.rst
 CHANGELOG-v5.rst
+CHANGELOG-v6.rst
 COPYING
 MANIFEST.in
 PKG-INFO
@@ -8,6 +9,7 @@ ansible_collections
 build-ansible.sh
 porting_guide_4.rst
 porting_guide_5.rst
+porting_guide_6.rst
 setup.cfg
 setup.py
 .pybuild/
