@@ -1,0 +1,5 @@
+python-ansible (100:10.0.0~beta1-1) UNRELEASED; urgency=medium
+
+  * https://github.com/ansible-community/ansible-build-data/releases/tag/10.0.0b1
+
+ -- Wong Hoi Sing Edison <hswong3i@pantarei-design.com>  Tue, 21 May 2024 21:57:47 +0800
