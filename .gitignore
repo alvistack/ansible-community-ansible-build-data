@@ -1,0 +1,14 @@
+*.egg-info/
+.pybuild/
+CHANGELOG-*.*
+COPYING
+MANIFEST.in
+PKG-INFO
+README.rst
+ansible_collections
+build-ansible.sh
+porting_guide_*.rst
+pyproject.toml
+setup.cfg
+setup.py
+tags.yaml
