@@ -1,0 +1,5 @@
+python-ansible (100:14.2.0-1) UNRELEASED; urgency=medium
+
+  * https://github.com/ansible-community/ansible-build-data/releases/tag/14.2.0
+
+ -- Wong Hoi Sing Edison <hswong3i@pantarei-design.com>  Sat, 08 Aug 2026 17:29:38 +0800
