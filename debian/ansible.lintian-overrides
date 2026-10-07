@@ -1,0 +1,15 @@
+ansible: backup-file-in-package
+ansible: broken-zip
+ansible: copyright-without-copyright-notice
+ansible: embedded-javascript-library
+ansible: executable-not-elf-or-script
+ansible: initial-upload-closes-no-bugs
+ansible: macos-ds-store-file-in-package
+ansible: national-encoding
+ansible: no-manual-page
+ansible: package-contains-python-dot-directory
+ansible: package-contains-vcs-control-file
+ansible: script-not-executable
+ansible: shell-script-fails-syntax-check
+ansible: unusual-interpreter
+ansible: zero-byte-file-in-doc-directory
