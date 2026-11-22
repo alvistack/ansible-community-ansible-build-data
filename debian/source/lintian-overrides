@@ -1,0 +1,5 @@
+python-ansible source: file-without-copyright-information
+python-ansible source: no-debian-changes
+python-ansible source: source-contains-prebuilt-windows-binary
+python-ansible source: source-is-missing
+python-ansible source: source-package-encodes-python-version
